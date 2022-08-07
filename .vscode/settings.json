@@ -1,0 +1,7 @@
+{
+    "registry": "ste5phil/iot-store",
+    "db_connection_string": {
+        "key": "ConnectionStrings__AppDbContext",
+        "value": "Host=127.0.0.1;Database=iotstore;Username=postgres;Password=postgres"
+    }
+}

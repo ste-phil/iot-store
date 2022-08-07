@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: postgresdb
+    environment:
+      - POSTGRES_DB=iotstore
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes: 
+      - db:/var/lib/postgresql/data
+
+  iotstore:
+    image: ste5phil/iot-store
+    restart: always
+    environment:
+      - ConnectionStrings__AppDbContext=Host=db;Database=iotstore;Username=postgres;Password=postgres;
+      - ASPNETCORE_URLS=http://+:5092
+    ports:
+      - 5092:5092
+volumes:
+  db:
