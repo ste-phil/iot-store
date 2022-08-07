@@ -2,7 +2,7 @@
 
 HTTP GET @ `/api/iot` to get all available buckets which contain data
 
-HTTP GET @ `/api/iot(<bucketname>` to get data of bucket in csv format
+HTTP GET @ `/api/iot/<bucketname>` to get data of bucket in csv format
 
 HTTP POST @ `/api/iot/<bucketname>` to send data to the bucket (sent in body as text/plain)
 
